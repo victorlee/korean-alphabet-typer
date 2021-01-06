@@ -14,14 +14,17 @@ input {text-align: center;}
 function enter1(character){
 document.getElementById('choseong').value+=character;
 document.getElementById('choseong').focus();
+document.getElementById('choseong').value = '';
 }
 function enter2(character){
 document.getElementById('jungseong').value+=character;
 document.getElementById('jungseong').focus();
+document.getElementById('jungseong').value = '';
 }
 function enter3(character){
 document.getElementById('jongseong').value+=character;
 document.getElementById('jongseong').focus();
+document.getElementById('jongseong').value = '';
 }
 setInterval(
 function calculate()
