@@ -13,14 +13,15 @@ input {text-align: center;}
 <script>
 function enter1(character){
 document.getElementById('choseong').value+=character;
-document.getElementById('jungseong').focus();
+document.getElementById('choseong').focus();
 }
 function enter2(character){
 document.getElementById('jungseong').value+=character;
-document.getElementById('jongseong').focus();
+document.getElementById('jungseong').focus();
 }
 function enter3(character){
 document.getElementById('jongseong').value+=character;
+document.getElementById('jongseong').focus();
 }
 setInterval(
 function calculate()
