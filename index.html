@@ -23,11 +23,24 @@ document.getElementById('jungseong').value = '';
 document.getElementById('jungseong').value+=character;
 document.getElementById('jungseong').focus();
 }
-function enter3(character){
+
+function enter3(character) {
+  var checkBox = document.getElementById("check");
+  if (checkBox.checked == true){
 document.getElementById('jongseong').value = '';
 document.getElementById('jongseong').value+=character;
 setTimeout(function(){document.getElementById("enc").click()},50);
+  } else {
+document.getElementById('jongseong').value = '';
+document.getElementById('jongseong').value+=character;
+document.getElementById('jongseong').focus();
+  }
 }
+
+
+
+
+
 
 setInterval(
 function calculate()
@@ -59,6 +72,7 @@ function tochar() {
 });
 </script>
 <h1>Korean alphabet (Hangeul) typer</h1>
+<input type="checkbox" id="check" /> <span style="font-size:1rem">type by clicking final row</span>
 <div style="overflow-y:auto;">
 <table>
   <tr style="text-align:center">
@@ -188,6 +202,7 @@ document.getElementById('textarea').value+=' '; document.getElementById('textare
     <td><input type='button' class="bt" value='ㅎ' onclick="enter3('27')"/></td>
   </tr>
 </table>
+<input type="text" id="char" size="1" style="position: fixed;top: 1rem; right: 1rem; font-size:7rem; width: 1.5em;height: 1.5em;"/>
 </div>
 <hr>
 <div style="overflow-y:auto;">
@@ -196,7 +211,6 @@ decimal value: (<input type="text" id="choseong" oninput="calculate()" size="1" 
 <input type="text" id="jongseong" oninput="calculate()" size="1" placeholder="0" autocomplete="off"/> + 44032 =
 <input type='text' id="result" size="4" placeholder="Decimal" placeholder="0"/>
 ➜unicode <input type="text" id="hex" size="4"/>
-➜char <input type="text" id="char" size="1"/>
 <button id="enc" onclick="
 document.getElementById('choseong').value = '';
 document.getElementById('jungseong').value = '';
