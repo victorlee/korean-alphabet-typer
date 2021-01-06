@@ -193,33 +193,6 @@ document.getElementById('choseong').value = '';
 document.getElementById('jungseong').value = '';
 document.getElementById('jongseong').value = '';
 ">enter&clear</button>
-total: 19 × 21 × 28 = 11172 possibilities
 <textarea style="width: 30rem; display: block;" rows="3" id="textarea"></textarea>
 </div><br>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" size="2"></script>
-<script>
-var $inp = $(".hangeul");
-$inp.on({
- keydown: function(ev) {
-  var i = $inp.index(this);
-  if(ev.which===8 && !this.value && i) {
-    $inp.eq(i - 1).focus();
-  }
- }
-});
-$(".hangeul").keyup(function (event) {
-    if (event.keyCode == 13) {
-        textboxes = $("input.hangeul");
-        currentBoxNumber = textboxes.index(this);
-        console.log(textboxes.index(this));
-        if (textboxes[currentBoxNumber + 1] != null) {
-            nextBox = textboxes[currentBoxNumber + 1];
-            nextBox.focus();
-            nextBox.select();
-            event.preventDefault();
-            return false;
-        }
-    }
-});
-</script>
 </html>
