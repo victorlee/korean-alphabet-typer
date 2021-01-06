@@ -8,6 +8,8 @@ body, td, input, button, textarea {font-size: 1.5rem; font-family: Arial}
 table {border-collapse: collapse; background: #EEE;}
 td {border: 3px solid #FFF;}
 .bt {padding: 0px; display:block; width: 100%; height: 100%; background: #EEE; border: 1px solid #888; border-radius: 3px; cursor: pointer;}
+.fin {background: #EEEEFC}
+.fin .bt {background: #EEEEFC}
 input {text-align: center;}
 </style>
 <script>
@@ -24,8 +26,9 @@ document.getElementById('jungseong').focus();
 function enter3(character){
 document.getElementById('jongseong').value = '';
 document.getElementById('jongseong').value+=character;
-document.getElementById('jongseong').focus();
+setTimeout(function(){document.getElementById("enc").click()},1);
 }
+
 setInterval(
 function calculate()
 {
@@ -59,7 +62,9 @@ function tochar() {
 <div style="overflow-y:auto;">
 <table>
   <tr style="text-align:center">
-    <td></td>
+    <td><input type='button' class="bt" value='space' onclick="
+document.getElementById('textarea').value+=' '; document.getElementById('textarea').focus();
+      "/></td>
     <td style="background: #FCEEEE;">0</td>
     <td>1</td>
     <td>2</td>
@@ -151,7 +156,7 @@ function tochar() {
     <td></td>
     <td></td>
   </tr>
-  <tr>
+  <tr class="fin">
     <td>final</td>
     <td><input type='button' class="bt" value='' onclick="enter3('0')" style="background: #FCEEEE;"/></td>
     <td><input type='button' class="bt" value='ㄱ' onclick="enter3('1')"/></td>
@@ -192,7 +197,7 @@ decimal value: (<input type="text" id="choseong" oninput="calculate()" size="1" 
 <input type='text' id="result" size="4" placeholder="Decimal" placeholder="0"/>
 ➜unicode <input type="text" id="hex" size="4"/>
 ➜char <input type="text" id="char" size="1"/>
-<button onclick="
+<button id="enc" onclick="
 document.getElementById('choseong').value = '';
 document.getElementById('jungseong').value = '';
 document.getElementById('jongseong').value = '';
