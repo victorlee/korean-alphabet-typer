@@ -60,7 +60,7 @@ function tochar() {
 <table>
   <tr style="text-align:center">
     <td></td>
-    <td>0</td>
+    <td style="background: #FCEEEE;">0</td>
     <td>1</td>
     <td>2</td>
     <td>3</td>
@@ -91,7 +91,7 @@ function tochar() {
   </tr>
   <tr>
     <td>initial</td>
-    <td><input type='button' class="bt" value='ㄱ' onclick="enter1('0')"/></td>
+    <td><input type='button' class="bt" value='ㄱ' onclick="enter1('0')" style="background: #FCEEEE;"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter1('1')"/></td>
     <td><input type='button' class="bt" value='ㄴ' onclick="enter1('2')"/></td>
     <td><input type='button' class="bt" value='ㄷ' onclick="enter1('3')"/></td>
@@ -122,7 +122,7 @@ function tochar() {
   </tr>
   <tr>
     <td>medial</td>
-    <td><input type='button' class="bt" value='ㅏ' onclick="enter2('0')"/></td>
+    <td><input type='button' class="bt" value='ㅏ' onclick="enter2('0')" style="background: #FCEEEE;"/></td>
     <td><input type='button' class="bt" value='ㅐ' onclick="enter2('1')"/></td>
     <td><input type='button' class="bt" value='ㅑ' onclick="enter2('2')"/></td>
     <td><input type='button' class="bt" value='ㅒ' onclick="enter2('3')"/></td>
@@ -153,7 +153,7 @@ function tochar() {
   </tr>
   <tr>
     <td>final</td>
-    <td><input type='button' class="bt" value='' onclick="enter3('0')"/></td>
+    <td><input type='button' class="bt" value='' onclick="enter3('0')" style="background: #FCEEEE;"/></td>
     <td><input type='button' class="bt" value='ㄱ' onclick="enter3('1')"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter3('2')"/></td>
     <td><input type='button' class="bt" value='ㄳ' onclick="enter3('3')"/></td>
@@ -193,11 +193,11 @@ decimal value: (<input type="text" id="choseong" oninput="calculate()" size="1" 
 ➜unicode <input type="text" id="hex" size="4"/>
 ➜char <input type="text" id="char" size="1"/>
 <button onclick="
-document.getElementById('textarea').value+=document.getElementById('char').value;
-document.getElementById('textarea').focus();
 document.getElementById('choseong').value = '';
 document.getElementById('jungseong').value = '';
 document.getElementById('jongseong').value = '';
+document.getElementById('textarea').value+=document.getElementById('char').value;
+document.getElementById('textarea').focus();
 ">enter&clear</button>
 </div>
 <hr>
