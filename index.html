@@ -10,6 +10,12 @@ td {border: 3px solid #FFF;}
 .bt {padding: 0px; display:block; width: 100%; height: 100%; background: #EEE; border: 1px solid #888; border-radius: 3px; cursor: pointer;}
 .fin {background: #EEEEFC}
 .fin .bt {background: #EEEEFC}
+@media (min-width: 600px) {
+.char {position: fixed;top: 1rem; right: 1rem; font-size: 7rem; width: 1.5em; height: 1.5em;}
+}
+@media (max-width: 599px) {
+.char {position: fixed;top: 1rem; right: 1rem; font-size: 4rem; width: 1.5em;height: 1.5em;}
+}
 input {text-align: center;}
 </style>
 <script>
@@ -196,7 +202,7 @@ document.getElementById('textarea').value+=' '; document.getElementById('textare
     <td><input type='button' class="bt" value='ㅎ' onclick="enter3('27')"/></td>
   </tr>
 </table>
-<input type="text" id="char" size="1" style="position: fixed;top: 1rem; right: 1rem; font-size:7rem; width: 1.5em;height: 1.5em;"/>
+<input type="text" id="char" class="char" size="1"/>
 </div>
 <hr>
 <div style="overflow-y:auto;">
