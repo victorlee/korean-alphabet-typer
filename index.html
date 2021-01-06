@@ -211,9 +211,13 @@ document.getElementById('jungseong').value = '';
 document.getElementById('jongseong').value = '';
 document.getElementById('textarea').value+=document.getElementById('char').value;
 document.getElementById('textarea').focus();
-">enter&clear</button>
+">enter</button>
 </div>
 <hr>
 <textarea style="width: 100%" rows="3" id="textarea"></textarea>
+<button onclick="
+document.getElementById('textarea').value = '';
+document.getElementById('textarea').focus();
+">clear</button>
 </body>
 </html>
