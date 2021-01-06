@@ -193,10 +193,11 @@ decimal value: (<input type="text" id="choseong" oninput="calculate()" size="1" 
 ➜unicode <input type="text" id="hex" size="4"/>
 ➜char <input type="text" id="char" size="1"/>
 <button onclick="
-document.getElementById('textarea').value+=document.getElementById('char').value;
 document.getElementById('choseong').value = '';
 document.getElementById('jungseong').value = '';
 document.getElementById('jongseong').value = '';
+document.getElementById('textarea').value+=document.getElementById('char').value;
+document.getElementById('textarea').focus();
 ">enter&clear</button>
 </div>
 <hr>
