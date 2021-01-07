@@ -8,6 +8,10 @@ body, td, input, button, textarea, a {font-size: 1.5rem; font-family: Arial}
 table {border-collapse: collapse; background: #EEE;}
 td {border: 3px solid #FFF;}
 .bt {padding: 0px; display:block; width: 100%; height: 100%; background: #EEE; border: 1px solid #888; border-radius: 3px; cursor: pointer;}
+.ini {background: #FEE}
+.ini .bt {background: #FEE}
+.med {background: #EFE}
+.med .bt {background: #EFE}
 .fin {background: #EEF}
 .fin .bt {background: #EEF}
 @media (min-width: 1100px) {
@@ -71,7 +75,7 @@ function tochar() {
 <table>
   <tr style="text-align:center">
     <td></td>
-    <td style="background: #FCEEEE;">0</td>
+    <td>0</td>
     <td>1</td>
     <td>2</td>
     <td>3</td>
@@ -100,9 +104,9 @@ function tochar() {
     <td>26</td>
     <td>27</td>
   </tr>
-  <tr>
+  <tr class="ini">
     <td>initial</td>
-    <td><input type='button' class="bt" value='ㄱ' onclick="enter1('0')" style="background: #FCEEEE;"/></td>
+    <td><input type='button' class="bt" value='ㄱ' onclick="enter1('0')" style="background: #EEE;"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter1('1')"/></td>
     <td><input type='button' class="bt" value='ㄴ' onclick="enter1('2')"/></td>
     <td><input type='button' class="bt" value='ㄷ' onclick="enter1('3')"/></td>
@@ -131,9 +135,9 @@ function tochar() {
     <td></td>
     <td></td>
   </tr>
-  <tr>
+  <tr class="med">
     <td>medial</td>
-    <td><input type='button' class="bt" value='ㅏ' onclick="enter2('0')" style="background: #FCEEEE;"/></td>
+    <td><input type='button' class="bt" value='ㅏ' onclick="enter2('0')" style="background: #EEE;"/></td>
     <td><input type='button' class="bt" value='ㅐ' onclick="enter2('1')"/></td>
     <td><input type='button' class="bt" value='ㅑ' onclick="enter2('2')"/></td>
     <td><input type='button' class="bt" value='ㅒ' onclick="enter2('3')"/></td>
@@ -164,7 +168,7 @@ function tochar() {
   </tr>
   <tr class="fin">
     <td>final</td>
-    <td><input type='button' class="bt" value='' onclick="enter3('0')" style="background: #FCEEEE;"/></td>
+    <td><input type='button' class="bt" value='' onclick="enter3('0')" style="background: #EEE;"/></td>
     <td><input type='button' class="bt" value='ㄱ' onclick="enter3('1')"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter3('2')"/></td>
     <td><input type='button' class="bt" value='ㄳ' onclick="enter3('3')"/></td>
