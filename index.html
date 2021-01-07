@@ -1,3 +1,4 @@
+
 <html>
 <title>Korean alphabet (Hangeul) typer</title>
 <meta charset="utf-8">
@@ -76,9 +77,7 @@ function tochar() {
 <div style="overflow-y:auto;">
 <table>
   <tr style="text-align:center">
-    <td><input type='button' class="bt" value='space' onclick="
-document.getElementById('textarea').value+=' '; document.getElementById('textarea').focus();
-      "/></td>
+    <td></td>
     <td style="background: #FCEEEE;">0</td>
     <td>1</td>
     <td>2</td>
@@ -211,6 +210,9 @@ decimal value: (<input type="text" id="choseong" oninput="calculate()" style="wi
 <input type="text" id="jongseong" oninput="calculate()" style="width: 2rem" placeholder="0" autocomplete="off"/> + 44032 =
 <input type='text' id="result" size="2" placeholder="Decimal" placeholder="0"/>
 ➜unicode <input type="text" id="hex" size="2"/>
+<button onclick="
+document.getElementById('textarea').value+=' '; document.getElementById('textarea').focus();
+">space</button>
 <button id="enc" onclick="
 document.getElementById('choseong').value = '';
 document.getElementById('jungseong').value = '';
