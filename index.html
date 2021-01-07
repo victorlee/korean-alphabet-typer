@@ -21,21 +21,21 @@ input {text-align: center;}
 <script>
 function enter1(character){
 document.getElementById('choseong').innerHTML = '';
-document.getElementById('choseong').innerHTML+=character;
+document.getElementById('choseong').innerHTML += character;
 }
 function enter2(character){
 document.getElementById('jungseong').innerHTML = '';
-document.getElementById('jungseong').innerHTML+=character;
+document.getElementById('jungseong').innerHTML += character;
 }
 function enter3(character) {
   var checkBox = document.getElementById("check");
   if (checkBox.checked == true){
 document.getElementById('jongseong').innerHTML = '';
-document.getElementById('jongseong').innerHTML+=character;
+document.getElementById('jongseong').innerHTML += character;
 setTimeout(function(){document.getElementById("enc").click()},50);
   } else {
 document.getElementById('jongseong').innerHTML = '';
-document.getElementById('jongseong').innerHTML+=character;
+document.getElementById('jongseong').innerHTML += character;
   }
 }
 setInterval(
@@ -211,14 +211,14 @@ decimal value: (<span id="choseong" style="font-weight: bold;">0</span> × 588) 
 document.getElementById('choseong').innerHTML = '0';
 document.getElementById('jungseong').innerHTML = '0';
 document.getElementById('jongseong').innerHTML = '0';
-document.getElementById('textarea').value+=document.getElementById('char').value;
+document.getElementById('textarea').value += document.getElementById('char').value;
 document.getElementById('textarea').focus();
 ">enter</button>
 </div>
 <hr>
 <textarea style="width: 100%" rows="3" id="textarea"></textarea>
 <button onclick="
-document.getElementById('textarea').value+=' '; document.getElementById('textarea').focus();
+document.getElementById('textarea').value += ' '; document.getElementById('textarea').focus();
 ">space</button>
 <button onclick="
 document.getElementById('textarea').value = '';
