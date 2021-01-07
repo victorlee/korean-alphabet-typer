@@ -1,4 +1,3 @@
-
 <html>
 <title>Korean alphabet (Hangeul) typer</title>
 <meta charset="utf-8">
@@ -210,9 +209,6 @@ decimal value: (<input type="text" id="choseong" oninput="calculate()" style="wi
 <input type="text" id="jongseong" oninput="calculate()" style="width: 2rem" placeholder="0" autocomplete="off"/> + 44032 =
 <input type='text' id="result" size="2" placeholder="Decimal" placeholder="0"/>
 ➜unicode <input type="text" id="hex" size="2"/>
-<button onclick="
-document.getElementById('textarea').value+=' '; document.getElementById('textarea').focus();
-">space</button>
 <button id="enc" onclick="
 document.getElementById('choseong').value = '';
 document.getElementById('jungseong').value = '';
@@ -223,6 +219,9 @@ document.getElementById('textarea').focus();
 </div>
 <hr>
 <textarea style="width: 100%" rows="3" id="textarea"></textarea>
+<button onclick="
+document.getElementById('textarea').value+=' '; document.getElementById('textarea').focus();
+">space</button>
 <button onclick="
 document.getElementById('textarea').value = '';
 document.getElementById('textarea').focus();
