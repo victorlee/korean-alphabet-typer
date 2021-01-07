@@ -1,5 +1,5 @@
 <html>
-<title id="title">가 - Korean alphabet (Hangeul) typer</title>
+<title id="title">Korean alphabet (Hangeul) typer</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
@@ -17,7 +17,6 @@ td {border: 3px solid #FFF;}
 .active {color:red; font-weight: bold; box-shadow:0px 0px 0px 1px black inset;}
 @media (min-width: 1200px) {
 html {padding: 1rem; width: 65rem; margin: auto;}
-.char {position: fixed; top: 1rem; right: 1rem; font-size: 7rem; width: 1.5em; height: 1.5em;}
 }
 @media (max-width: 1199px) {
 .char {display: none;}
@@ -37,18 +36,12 @@ function handleBttns(evt) {
 function enter1(character){
 document.getElementById('choseong').innerHTML = '';
 document.getElementById('choseong').innerHTML += character;
-calculate();
-toHex();
-tochar();
-title();
+go();
 }
 function enter2(character){
 document.getElementById('jungseong').innerHTML = '';
 document.getElementById('jungseong').innerHTML += character;
-calculate();
-toHex();
-tochar();
-title();
+go();
 }
 function enter3(character) {
   var checkBox = document.getElementById("check");
@@ -56,18 +49,18 @@ function enter3(character) {
 document.getElementById('jongseong').innerHTML = '';
 document.getElementById('jongseong').innerHTML += character;
 setTimeout(function(){document.getElementById("enc").click()},50);
-calculate();
-toHex();
-tochar();
-title();
+go();
   } else {
 document.getElementById('jongseong').innerHTML = '';
 document.getElementById('jongseong').innerHTML += character;
+go();
+  }
+}
+function go() {
 calculate();
 toHex();
 tochar();
 title();
-  }
 }
 function calculate()
 {
@@ -89,10 +82,6 @@ function tochar() {
 function title() {
 document.getElementById("title").innerHTML = document.getElementById("char").innerHTML + ' - Korean alphabet (Hangeul) typer'
 }
-setInterval(
-function display() {
-document.getElementById("char2").value = document.getElementById("char").innerHTML
-});
 </script>
 </head>
 <body>
@@ -231,7 +220,6 @@ document.getElementById("char2").value = document.getElementById("char").innerHT
 <span id="jongseong" style="font-weight: bold; background: #DDF;">0</span> + 44032 =
 <span id="result" style="font-weight: bold;" onclick="calculate()">44032</span>
 → unicode: <span style="font-weight: bold;">\u<span id="hex">ac00</span></span>
-<input type="text" readonly id="char2" class="char" size="1" value="가"/>
 <hr>
 <button id="enc" onclick="
   document.getElementById('textarea').value += document.getElementById('char').innerHTML;
