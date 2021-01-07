@@ -11,6 +11,7 @@ td {border: 3px solid #FFF;}
 .fin {background: #EEF}
 .fin .bt {background: #EEF}
 @media (min-width: 1100px) {
+html {padding:0 10rem;}
 .char {position: fixed;top: 1rem; right: 1rem; font-size: 7rem; width: 1.5em; height: 1.5em;}
 }
 @media (max-width: 1099px) {
@@ -70,11 +71,7 @@ function tochar() {
 <div style="overflow-y:auto;">
 <table>
   <tr style="text-align:center">
-    <td><input type='button' class="bt" value='reset' onclick="
-      document.getElementById('choseong').innerHTML = '0';
-      document.getElementById('jungseong').innerHTML = '0';
-      document.getElementById('jongseong').innerHTML = '0';
-      "/></td>
+    <td></td>
     <td style="background: #FCEEEE;">0</td>
     <td>1</td>
     <td>2</td>
@@ -207,30 +204,39 @@ decimal value: (<span id="choseong" style="font-weight: bold;">0</span> × 588) 
 <span id="jongseong" style="font-weight: bold;">0</span> + 44032 =
 <span id="result" style="font-weight: bold;"></span>
 → unicode: <span style="font-weight: bold;">\u<span id="hex"></span></span>
+</div>
+<hr>
+<div style="overflow-y:auto;">
+<button onclick="
+  document.getElementById('choseong').innerHTML = '0';
+  document.getElementById('jungseong').innerHTML = '0';
+  document.getElementById('jongseong').innerHTML = '0';
+">reset</button>
 <button id="enc" onclick="
-document.getElementById('choseong').innerHTML = '0';
-document.getElementById('jungseong').innerHTML = '0';
-document.getElementById('jongseong').innerHTML = '0';
-document.getElementById('textarea').value += document.getElementById('char').value;
-document.getElementById('textarea').focus();
-">enter</button>
+  document.getElementById('choseong').innerHTML = '0';
+  document.getElementById('jungseong').innerHTML = '0';
+  document.getElementById('jongseong').innerHTML = '0';
+  document.getElementById('textarea').value += document.getElementById('char').value;
+  document.getElementById('textarea').focus();
+">ENTER</button>
+<button onclick="
+  document.getElementById('textarea').value += ' ';
+  document.getElementById('textarea').focus();
+">space</button>
+<button onclick="
+  document.getElementById('textarea').value = '';
+  document.getElementById('textarea').focus();
+">clear</button>
+<button onclick="
+  document.getElementById('choseong').innerHTML = '0';
+  document.getElementById('jungseong').innerHTML = '0';
+  document.getElementById('jongseong').innerHTML = '0';
+  document.getElementById('textarea').value = '';
+  document.getElementById('textarea').focus();
+">reset&clear</button>
 </div>
 <hr>
 <textarea style="width: 100%" rows="3" id="textarea"></textarea>
-<button onclick="
-document.getElementById('textarea').value += ' '; document.getElementById('textarea').focus();
-">space</button>
-<button onclick="
-document.getElementById('textarea').value = '';
-document.getElementById('textarea').focus();
-">clear</button>
-<button onclick="
-document.getElementById('choseong').innerHTML = '0';
-document.getElementById('jungseong').innerHTML = '0';
-document.getElementById('jongseong').innerHTML = '0';
-document.getElementById('textarea').value = '';
-document.getElementById('textarea').focus();
-">reset&clear</button>
 <a href="https://www.unicode.org/charts/PDF/UAC00.pdf" target="_blank">full list</a>
 </body>
 </html>
