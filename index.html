@@ -213,6 +213,9 @@ decimal value: (<span id="choseong" style="font-weight: bold;">0</span> × 588) 
   document.getElementById('jongseong').innerHTML = '0';
 ">reset</button>
 <button id="enc" onclick="
+  document.getElementById('choseong').innerHTML = '0';
+  document.getElementById('jungseong').innerHTML = '0';
+  document.getElementById('jongseong').innerHTML = '0';
   document.getElementById('textarea').value += document.getElementById('char').value;
   document.getElementById('textarea').focus();
 ">ENTER</button>
@@ -224,13 +227,6 @@ decimal value: (<span id="choseong" style="font-weight: bold;">0</span> × 588) 
   document.getElementById('textarea').value = '';
   document.getElementById('textarea').focus();
 ">clear</button>
-<button onclick="
-  document.getElementById('choseong').innerHTML = '0';
-  document.getElementById('jungseong').innerHTML = '0';
-  document.getElementById('jongseong').innerHTML = '0';
-  document.getElementById('textarea').value = '';
-  document.getElementById('textarea').focus();
-">reset&clear</button>
 </div>
 <hr>
 <textarea style="width: 100%; resize: none;" rows="3" id="textarea"></textarea>
