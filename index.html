@@ -112,7 +112,7 @@ function tochar() {
   </tr>
   <tr class="ini">
     <td>initial</td>
-    <td><input type='button' class="bt active" value='ㄱ' onclick="enter1('0')"/></td>
+    <td><input type='button' class="bt active" id="def1" value='ㄱ' onclick="enter1('0')"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter1('1')"/></td>
     <td><input type='button' class="bt" value='ㄴ' onclick="enter1('2')"/></td>
     <td><input type='button' class="bt" value='ㄷ' onclick="enter1('3')"/></td>
@@ -143,7 +143,7 @@ function tochar() {
   </tr>
   <tr class="med">
     <td>medial</td>
-    <td><input type='button' class="bt active" value='ㅏ' onclick="enter2('0')"/></td>
+    <td><input type='button' class="bt active" id="def2" value='ㅏ' onclick="enter2('0')"/></td>
     <td><input type='button' class="bt" value='ㅐ' onclick="enter2('1')"/></td>
     <td><input type='button' class="bt" value='ㅑ' onclick="enter2('2')"/></td>
     <td><input type='button' class="bt" value='ㅒ' onclick="enter2('3')"/></td>
@@ -174,7 +174,7 @@ function tochar() {
   </tr>
   <tr class="fin">
     <td>final</td>
-    <td><input type='button' class="bt active" value='' onclick="enter3('0')"/></td>
+    <td><input type='button' class="bt active" id="def3" value='' onclick="enter3('0')"/></td>
     <td><input type='button' class="bt" value='ㄱ' onclick="enter3('1')"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter3('2')"/></td>
     <td><input type='button' class="bt" value='ㄳ' onclick="enter3('3')"/></td>
@@ -213,15 +213,7 @@ decimal value: (<span id="choseong" style="font-weight: bold; background: #FDD;"
 → unicode: <span style="font-weight: bold;">\u<span id="hex"></span></span>
 <input type="text" id="char" class="char" size="1"/>
 <hr>
-<button onclick="
-  document.getElementById('choseong').innerHTML = '0';
-  document.getElementById('jungseong').innerHTML = '0';
-  document.getElementById('jongseong').innerHTML = '0';
-">reset</button>
 <button id="enc" onclick="
-  document.getElementById('choseong').innerHTML = '0';
-  document.getElementById('jungseong').innerHTML = '0';
-  document.getElementById('jongseong').innerHTML = '0';
   document.getElementById('textarea').value += document.getElementById('char').value;
   document.getElementById('textarea').focus();
 ">ENTER</button>
