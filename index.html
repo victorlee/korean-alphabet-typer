@@ -106,7 +106,7 @@ function tochar() {
   </tr>
   <tr class="ini">
     <td>initial</td>
-    <td><input type='button' class="bt" value='ㄱ' onclick="enter1('0')" style="background: #EEE;"/></td>
+    <td><input type='button' class="bt" value='ㄱ' onclick="enter1('0')"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter1('1')"/></td>
     <td><input type='button' class="bt" value='ㄴ' onclick="enter1('2')"/></td>
     <td><input type='button' class="bt" value='ㄷ' onclick="enter1('3')"/></td>
@@ -137,7 +137,7 @@ function tochar() {
   </tr>
   <tr class="med">
     <td>medial</td>
-    <td><input type='button' class="bt" value='ㅏ' onclick="enter2('0')" style="background: #EEE;"/></td>
+    <td><input type='button' class="bt" value='ㅏ' onclick="enter2('0')"/></td>
     <td><input type='button' class="bt" value='ㅐ' onclick="enter2('1')"/></td>
     <td><input type='button' class="bt" value='ㅑ' onclick="enter2('2')"/></td>
     <td><input type='button' class="bt" value='ㅒ' onclick="enter2('3')"/></td>
@@ -168,7 +168,7 @@ function tochar() {
   </tr>
   <tr class="fin">
     <td>final</td>
-    <td><input type='button' class="bt" value='' onclick="enter3('0')" style="background: #EEE;"/></td>
+    <td><input type='button' class="bt" value='' onclick="enter3('0')"/></td>
     <td><input type='button' class="bt" value='ㄱ' onclick="enter3('1')"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter3('2')"/></td>
     <td><input type='button' class="bt" value='ㄳ' onclick="enter3('3')"/></td>
@@ -200,9 +200,9 @@ function tochar() {
 </table>
 </div>
 <hr>
-decimal value: (<span id="choseong" style="font-weight: bold;">0</span> × 588) +
-(<span id="jungseong" style="font-weight: bold;">0</span> × 28) +
-<span id="jongseong" style="font-weight: bold;">0</span> + 44032 =
+decimal value: (<span id="choseong" style="font-weight: bold; background: #FDD;">0</span> × 588) +
+(<span id="jungseong" style="font-weight: bold; background: #DFD;">0</span> × 28) +
+<span id="jongseong" style="font-weight: bold; background: #DDF;">0</span> + 44032 =
 <span id="result" style="font-weight: bold;"></span>
 → unicode: <span style="font-weight: bold;">\u<span id="hex"></span></span>
 <input type="text" id="char" class="char" size="1"/>
