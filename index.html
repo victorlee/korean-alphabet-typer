@@ -1,5 +1,5 @@
 <html>
-<title>Korean alphabet (Hangeul) typer</title>
+<title id="title"></title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
@@ -85,6 +85,9 @@ function tochar() {
 setInterval(
 function display() {
 document.getElementById("char2").value = document.getElementById("char").innerHTML
+},
+function title() {
+document.getElementById("title").innerHTML = document.getElementById("char").innerHTML + ' - Korean alphabet (Hangeul) typer'
 });
 </script>
 </head>
