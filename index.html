@@ -20,7 +20,7 @@ html {padding: 1rem; width: 65rem; margin: auto;}
 .char {position: fixed; top: 1rem; right: 1rem; font-size: 7rem; width: 1.5em; height: 1.5em;}
 }
 @media (max-width: 1199px) {
-.char {width: 1.4em; height: 1.1em;}
+.char {display: none;}
 }
 input {text-align: center;}
 </style>
@@ -80,8 +80,12 @@ function toHex() {
 function tochar() {
   let hex = document.getElementById('hex').innerHTML;
   const char = String.fromCharCode(parseInt(hex,16));
-  document.getElementById("char").value = char;
+  document.getElementById("char").innerHTML = char;
 }
+setInterval(
+function display() {
+document.getElementById("char2").value = document.getElementById("char").innerHTML
+});
 </script>
 </head>
 <body>
@@ -215,15 +219,15 @@ function tochar() {
 </table>
 </div>
 <hr>
-decimal value: (<span id="choseong" style="font-weight: bold; background: #FDD;">0</span> × 588) +
+<span style="font-weight: bold;" id="char">가</span> — decimal value: (<span id="choseong" style="font-weight: bold; background: #FDD;">0</span> × 588) +
 (<span id="jungseong" style="font-weight: bold; background: #DFD;">0</span> × 28) +
 <span id="jongseong" style="font-weight: bold; background: #DDF;">0</span> + 44032 =
 <span id="result" style="font-weight: bold;" onclick="calculate()">44032</span>
 → unicode: <span style="font-weight: bold;">\u<span id="hex">ac00</span></span>
-<input type="text" readonly id="char" class="char" size="1" value="가"/>
+<input type="text" readonly id="char2" class="char" size="1" value="가"/>
 <hr>
 <button id="enc" onclick="
-  document.getElementById('textarea').value += document.getElementById('char').value;
+  document.getElementById('textarea').value += document.getElementById('char').innerHTML;
   document.getElementById('textarea').focus();
 ">ENTER</button>
 <button onclick="
