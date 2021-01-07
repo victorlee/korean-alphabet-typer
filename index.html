@@ -14,6 +14,7 @@ td {border: 3px solid #FFF;}
 .med .bt {background: #EFE}
 .fin {background: #EEF}
 .fin .bt {background: #EEF}
+.active {font-weight: bold; color: #F00}
 @media (min-width: 1100px) {
 html {padding: 1rem 10rem;}
 .char {position: fixed; top: 1rem; right: 1rem; font-size: 7rem; width: 1.5em; height: 1.5em;}
@@ -24,6 +25,15 @@ html {padding: 1rem 10rem;}
 input {text-align: center;}
 </style>
 <script>
+document.addEventListener("click", handleBttns);
+function handleBttns(evt) {
+  const origin = evt.target;
+  if (origin.className.startsWith("bt")) {
+    origin.closest("tr").querySelectorAll("input")
+      .forEach(bt => bt.classList.remove("active"));
+    origin.classList.add("active");
+  }
+}
 function enter1(character){
 document.getElementById('choseong').innerHTML = '';
 document.getElementById('choseong').innerHTML += character;
@@ -57,14 +67,10 @@ function toHex() {
   const hex = decimal.toString(16);
   document.getElementById("hex").innerHTML = hex;
 });
-
 setInterval(
 function tochar() {
-  // Get input
   let hex = document.getElementById('hex').innerHTML;
-  // Convert to char
   const char = String.fromCharCode(parseInt(hex,16));
-  // Show
   document.getElementById("char").value = char;
 });
 </script>
@@ -106,7 +112,7 @@ function tochar() {
   </tr>
   <tr class="ini">
     <td>initial</td>
-    <td><input type='button' class="bt" value='ㄱ' onclick="enter1('0')"/></td>
+    <td><input type='button' class="bt active" value='ㄱ' onclick="enter1('0')"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter1('1')"/></td>
     <td><input type='button' class="bt" value='ㄴ' onclick="enter1('2')"/></td>
     <td><input type='button' class="bt" value='ㄷ' onclick="enter1('3')"/></td>
@@ -137,7 +143,7 @@ function tochar() {
   </tr>
   <tr class="med">
     <td>medial</td>
-    <td><input type='button' class="bt" value='ㅏ' onclick="enter2('0')"/></td>
+    <td><input type='button' class="bt active" value='ㅏ' onclick="enter2('0')"/></td>
     <td><input type='button' class="bt" value='ㅐ' onclick="enter2('1')"/></td>
     <td><input type='button' class="bt" value='ㅑ' onclick="enter2('2')"/></td>
     <td><input type='button' class="bt" value='ㅒ' onclick="enter2('3')"/></td>
@@ -168,7 +174,7 @@ function tochar() {
   </tr>
   <tr class="fin">
     <td>final</td>
-    <td><input type='button' class="bt" value='' onclick="enter3('0')"/></td>
+    <td><input type='button' class="bt active" value='' onclick="enter3('0')"/></td>
     <td><input type='button' class="bt" value='ㄱ' onclick="enter3('1')"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter3('2')"/></td>
     <td><input type='button' class="bt" value='ㄳ' onclick="enter3('3')"/></td>
