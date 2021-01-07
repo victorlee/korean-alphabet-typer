@@ -221,6 +221,14 @@ document.getElementById('textarea').value+=' '; document.getElementById('textare
 <button onclick="
 document.getElementById('textarea').value = '';
 document.getElementById('textarea').focus();
-">clear</button> <a href="https://www.unicode.org/charts/PDF/UAC00.pdf" target="_blank">full list</a>
+">clear</button>
+<button onclick="
+document.getElementById('choseong').innerHTML = '0';
+document.getElementById('jungseong').innerHTML = '0';
+document.getElementById('jongseong').innerHTML = '0';
+document.getElementById('textarea').value = '';
+document.getElementById('textarea').focus();
+">reset&clear</button>
+<a href="https://www.unicode.org/charts/PDF/UAC00.pdf" target="_blank">full list</a>
 </body>
 </html>
