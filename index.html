@@ -20,51 +20,43 @@ input {text-align: center;}
 </style>
 <script>
 function enter1(character){
-document.getElementById('choseong').value = '';
-document.getElementById('choseong').value+=character;
-document.getElementById('choseong').focus();
+document.getElementById('choseong').innerHTML = '';
+document.getElementById('choseong').innerHTML+=character;
 }
 function enter2(character){
-document.getElementById('jungseong').value = '';
-document.getElementById('jungseong').value+=character;
-document.getElementById('jungseong').focus();
+document.getElementById('jungseong').innerHTML = '';
+document.getElementById('jungseong').innerHTML+=character;
 }
 function enter3(character) {
   var checkBox = document.getElementById("check");
   if (checkBox.checked == true){
-document.getElementById('jongseong').value = '';
-document.getElementById('jongseong').value+=character;
+document.getElementById('jongseong').innerHTML = '';
+document.getElementById('jongseong').innerHTML+=character;
 setTimeout(function(){document.getElementById("enc").click()},50);
   } else {
-document.getElementById('jongseong').value = '';
-document.getElementById('jongseong').value+=character;
-document.getElementById('jongseong').focus();
+document.getElementById('jongseong').innerHTML = '';
+document.getElementById('jongseong').innerHTML+=character;
   }
 }
-
 setInterval(
 function calculate()
 {
-  var x = Number(document.getElementById('choseong').value);
-  var y = Number(document.getElementById('jungseong').value);
-  var z = Number(document.getElementById('jongseong').value); 
-
-  document.getElementById('result').value = (x * 588) + (y * 28) + z + 44032
+  var x = Number(document.getElementById('choseong').innerHTML);
+  var y = Number(document.getElementById('jungseong').innerHTML);
+  var z = Number(document.getElementById('jongseong').innerHTML); 
+  document.getElementById('result').innerHTML = (x * 588) + (y * 28) + z + 44032
 });
-
 setInterval(
 function toHex() {
-  const decimal = +document.getElementById('result').value;
+  const decimal = +document.getElementById('result').innerHTML;
   const hex = decimal.toString(16);
-  document.getElementById("hex").value = '\\u' + hex;
+  document.getElementById("hex").innerHTML = hex;
 });
 
 setInterval(
 function tochar() {
   // Get input
-  let hex = document.getElementById('hex').value;
-  // Remove \u
-  hex = hex.slice(2);
+  let hex = document.getElementById('hex').innerHTML;
   // Convert to char
   const char = String.fromCharCode(parseInt(hex,16));
   // Show
@@ -77,9 +69,9 @@ function tochar() {
 <table>
   <tr style="text-align:center">
     <td><input type='button' class="bt" value='reset' onclick="
-      document.getElementById('choseong').value = '';
-      document.getElementById('jungseong').value = '';
-      document.getElementById('jongseong').value = '';
+      document.getElementById('choseong').innerHTML = '0';
+      document.getElementById('jungseong').innerHTML = '0';
+      document.getElementById('jongseong').innerHTML = '0';
       "/></td>
     <td style="background: #FCEEEE;">0</td>
     <td>1</td>
@@ -208,15 +200,15 @@ function tochar() {
 </div>
 <hr>
 <div style="overflow-y:auto;">
-decimal value: (<input type="text" id="choseong" oninput="calculate()" style="width: 2.4rem" placeholder="0" autocomplete="off"/> × 588) +
-(<input type="text" id="jungseong" oninput="calculate()" style="width: 2.4rem" placeholder="0" autocomplete="off"/> × 28) +
-<input type="text" id="jongseong" oninput="calculate()" style="width: 2.4rem" placeholder="0" autocomplete="off"/> + 44032 =
-<input type='text' id="result" size="2" placeholder="Decimal" placeholder="0"/>
-➜unicode <input type="text" id="hex" size="2"/>
+decimal value: (<span id="choseong" style="font-weight: bold;">0</span> × 588) +
+(<span id="jungseong" style="font-weight: bold;">0</span> × 28) +
+<span id="jongseong" style="font-weight: bold;">0</span> + 44032 =
+<span id="result" style="font-weight: bold;"></span>
+➜unicode <span style="font-weight: bold;">\u<span id="hex"></span></span>
 <button id="enc" onclick="
-document.getElementById('choseong').value = '';
-document.getElementById('jungseong').value = '';
-document.getElementById('jongseong').value = '';
+document.getElementById('choseong').innerHTML = '0';
+document.getElementById('jungseong').innerHTML = '0';
+document.getElementById('jongseong').innerHTML = '0';
 document.getElementById('textarea').value+=document.getElementById('char').value;
 document.getElementById('textarea').focus();
 ">enter</button>
