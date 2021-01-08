@@ -15,6 +15,10 @@ td {border: 3px solid #FFF;}
 .fin {background: #EEF}
 .fin .bt {background: #EEF}
 .active {color:red; font-weight: bold; box-shadow:0px 0px 0px 1px black inset;}
+[id^=div] > button:not(.active):hover {
+  color: orange;
+  background-color: #666;
+}
 @media (min-width: 1200px) {
 html {padding: 1rem; width: 65rem; margin: auto;}
 }
@@ -31,6 +35,13 @@ function handleBttns(evt) {
     origin.closest("tr").querySelectorAll("input")
       .forEach(bt => bt.classList.remove("active"));
     origin.classList.add("active");
+  }
+  if (origin.id === "reset") {
+    document.querySelectorAll("input.active")
+      .forEach(btn => btn.classList.remove("active"));
+    document.getElementById('active1').classList.add("active");
+    document.getElementById('active2').classList.add("active");
+    document.getElementById('active3').classList.add("active");
   }
 }
 function enter1(character){
@@ -62,8 +73,13 @@ toHex();
 tochar();
 title();
 }
-function calculate()
-{
+function reset () {
+document.getElementById('choseong').innerHTML = '0';
+document.getElementById('jungseong').innerHTML = '0';
+document.getElementById('jongseong').innerHTML = '0';
+go();
+}
+function calculate() {
   var x = Number(document.getElementById('choseong').innerHTML);
   var y = Number(document.getElementById('jungseong').innerHTML);
   var z = Number(document.getElementById('jongseong').innerHTML); 
@@ -121,7 +137,7 @@ document.getElementById("title").innerHTML = document.getElementById("char").inn
   </tr>
   <tr class="ini">
     <td>initial</td>
-    <td><input type='button' class="bt active" value='ㄱ' onclick="enter1('0')"/></td>
+    <td><input type='button' class="bt active" id="active1" value='ㄱ' onclick="enter1('0')"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter1('1')"/></td>
     <td><input type='button' class="bt" value='ㄴ' onclick="enter1('2')"/></td>
     <td><input type='button' class="bt" value='ㄷ' onclick="enter1('3')"/></td>
@@ -152,7 +168,7 @@ document.getElementById("title").innerHTML = document.getElementById("char").inn
   </tr>
   <tr class="med">
     <td>medial</td>
-    <td><input type='button' class="bt active" value='ㅏ' onclick="enter2('0')"/></td>
+    <td><input type='button' class="bt active" id="active2" value='ㅏ' onclick="enter2('0')"/></td>
     <td><input type='button' class="bt" value='ㅐ' onclick="enter2('1')"/></td>
     <td><input type='button' class="bt" value='ㅑ' onclick="enter2('2')"/></td>
     <td><input type='button' class="bt" value='ㅒ' onclick="enter2('3')"/></td>
@@ -183,7 +199,7 @@ document.getElementById("title").innerHTML = document.getElementById("char").inn
   </tr>
   <tr class="fin">
     <td>final</td>
-    <td><input type='button' class="bt active" value='' onclick="enter3('0')"/></td>
+    <td><input type='button' class="bt active" id="active3" value='' onclick="enter3('0')"/></td>
     <td><input type='button' class="bt" value='ㄱ' onclick="enter3('1')"/></td>
     <td><input type='button' class="bt" value='ㄲ' onclick="enter3('2')"/></td>
     <td><input type='button' class="bt" value='ㄳ' onclick="enter3('3')"/></td>
@@ -222,6 +238,7 @@ decimal value: <span style="text-decoration: underline;">44032 + (<span id="chos
 → unicode: <span style="font-weight: bold;">\u<span id="hex">ac00</span></span>
 → <span style="font-weight: bold; color: blue; font-size: 1.2em;" id="char">가</span>
 <hr>
+<button id="reset" onclick="reset()">reset</button>
 <button id="enc" onclick="
   document.getElementById('textarea').value += document.getElementById('char').innerHTML;
   document.getElementById('textarea').focus();
